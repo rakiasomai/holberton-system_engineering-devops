@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script display a sentence 10 times.
+Hol=0
+until [ $Hol -ge 10 ]; do
+      echo Holberton School
+      let Hol+=1
+done

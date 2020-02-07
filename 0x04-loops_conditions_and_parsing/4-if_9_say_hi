@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script display "Hi" after 9 line, Holberton School in other lines.
+Hol=1
+while [ $Hol -le 10 ]; do
+    echo Holberton School
+    if [ $Hol -eq 9 ]
+    then
+	echo Hi
+    fi
+    let Hol+=1
+done
