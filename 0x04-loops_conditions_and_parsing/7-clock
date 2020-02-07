@@ -2,12 +2,12 @@
 # script displays a counter for hours and minutes.
 # minutes from 1 to 59.
 hour=0
-minute=1
-while [ $hour -lt 13 ]; do
+minute=0
+while [ $hour -le 12 ]; do
     echo "Hour: $hour"
-    while [ $minute -lt 60 ]; do
+    while [ $minute -le 58 ]; do
 	echo "$minute"
-	let minute=minute+1
+	let minute=$((minute+1))
     done
-    let hour=hour+1
+    let hour=$((hour+1))
 done
