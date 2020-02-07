@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script display a sentence 10 times.
+Hol=0
+while [ $Hol -lt 10 ]; do
+      echo Holberton School
+      let Hol=Hol+1
+done
