@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script to display a sentence 10 times.
+for ((Hol=0; Hol<10; Hol++))
+do
+	echo "Holberton School"
+done
