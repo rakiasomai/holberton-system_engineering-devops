@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # script displays a counter for hours and minutes
-HOUR="0"
-MINUTE="1"
+HOUR=0
+MINUTE=1
 while [ $HOUR -le 12 ];
     do
     echo "Hour: ${HOUR}"
