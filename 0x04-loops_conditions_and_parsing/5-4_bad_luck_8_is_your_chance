@@ -2,7 +2,7 @@
 # displays bad luck for the 4th loop iteration.
 # displays good luck for the 8th loop iteration.
 # displays Holberton School for the other iterations.
-Hol=1
+Hol=0
 while [ $Hol -lt 10 ]; do
       if [ $Hol -eq 4 ]
       then
