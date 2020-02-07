@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script displays all files in current directory.
+for y in *; do
+    echo "$y" | cut -d'-' -f2
+done
