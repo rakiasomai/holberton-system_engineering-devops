@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Write a script that creat a file and others things.
+trap "echo I hate the kill command; exit" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "exit" SIGQUIT
+echo $$ > /var/run/holbertonscript.pid
+while true
+do
+    echo "To infinity and beyond"
+    sleep 10
+done
