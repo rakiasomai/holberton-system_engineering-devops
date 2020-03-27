@@ -1,8 +1,4 @@
 # Install ngnix with puppet and configurate a server
-# Requirements:
-#    Nginx should be listening on port 80
-#    When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Holberton School
-#    The redirection must be a 301 Moved Permanently
 
 exec {'update':
   provider => shell,
