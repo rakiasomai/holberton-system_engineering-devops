@@ -1,20 +1,22 @@
-# puppet advanced
-package { 'nginx':
-  ensure => installed,
+#install nginx
+exec { 'update':
+  command  => 'sudo apt-get update',
+  provider => shell,
 }
 
-file_line { 'X':
-  ensure => 'present',
+-> package {'nginx':
+  ensure => present,
+}
+
+-> file_line { 'change header':
+  ensure => present,
   path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'add_header X-Served-By $hostname;'
+  line   => "	location / {
+  add_header X-Served-By ${hostname};",
+  match  => '^\tlocation / {',
 }
 
-file { '/usr/share/nginx/html/index.html':
-  content => 'Holberton School',
-}
-
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+-> exec { 'Update':
+  command  => 'sudo service nginx restart',
+  provider => shell,
 }
