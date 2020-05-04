@@ -11,9 +11,9 @@ if __name__ == "__main__":
     tasks = requests.get("http://jsonplaceholder.typicode.com/todos").json()
     storage = {}
 
-    for usr in users:
-        em_id = usr.get("id")
-        username = usr.get("username")
+    for user in users:
+        em_id = user.get("id")
+        username = user.get("username")
         all = []
 
         for task in tasks:
