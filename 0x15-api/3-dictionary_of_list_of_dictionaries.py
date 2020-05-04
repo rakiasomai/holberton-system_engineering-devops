@@ -12,8 +12,8 @@ if __name__ == "__main__":
     storage = {}
 
     for usr in users:
-        em_id = user.get("id")
-        username = user.get("username")
+        em_id = usr.get("id")
+        username = usr.get("username")
         all = []
 
         for task in tasks:
