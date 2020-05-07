@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+''' This module contain the function number_of_subscribers '''
+
 import requests as myreq
 
 
