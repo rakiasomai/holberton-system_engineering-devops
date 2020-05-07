@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import requests
+import requests as myreq
 
 
 def number_of_subscribers(subreddit):
     ''' def number of subscribers '''
     url = "http://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'user-agent': 'rakiarequest'}
-    r = requests.get(url, headers=headers)
+    user = {'user-agent': 'rakia'}
+    r = requests.get(url, headers=user)
     if (r.status_code is 302 or r.status_code is 404):
         return 0
     r = r.json()
