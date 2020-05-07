@@ -4,16 +4,16 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], then=""):
+def recurse(subreddit, hot_list=[], after=""):
     ''' def recurse '''
-    if (then is None):
+    if (after is None):
         return hot_list
 
     if (len(hot_list) == 0):
         url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     else:
         url = "https://www.reddit.com/r/{}/hot.json?after={}".format(
-            subreddit, then)
+            subreddit, after)
     user = {'user-agent': 'rakia'}
 
     r = requests.get(url, headers=user)
@@ -26,5 +26,5 @@ def recurse(subreddit, hot_list=[], then=""):
         for y in r['data']['children']:
             hot_list.append(y['data']['title'])
 
-    then = r['data']['then']
-    return recurse(subreddit, hot_list, then)
+    after = r['data']['after']
+    return recurse(subreddit, hot_list, after)
