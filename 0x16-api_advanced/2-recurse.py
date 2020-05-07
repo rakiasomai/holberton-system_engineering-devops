@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], then=""):
         url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     else:
         url = "https://www.reddit.com/r/{}/hot.json?after={}".format(
-            subreddit, after)
+            subreddit, then)
     user = {'user-agent': 'rakia'}
 
     r = requests.get(url, headers=user)
@@ -23,8 +23,8 @@ def recurse(subreddit, hot_list=[], then=""):
         return None
     else:
         r = r.json()
-        for post in r['data']['children']:
-            hot_list.append(post['data']['title'])
+        for y in r['data']['children']:
+            hot_list.append(y['data']['title'])
 
     then = r['data']['then']
     return recurse(subreddit, hot_list, then)
